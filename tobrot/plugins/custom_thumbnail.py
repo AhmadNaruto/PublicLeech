@@ -35,7 +35,7 @@ async def save_thumb_nail(client, message):
         if metadata.has("height"):
             height = metadata.get("height")
         # resize image
-        # ref: https://t.me/ivenkatraj
+        # ref: https://t.me/PyrogramChat/44663
         img = Image.open(downloaded_file_name)
         # https://stackoverflow.com/a/37631799/4723940
         # img.thumbnail((320, 320))
@@ -60,7 +60,7 @@ async def clear_thumb_nail(client, message):
         thumbnail_location,
         str(message.from_user.id) + ".jpg"
     )
-    ismgs = await message.reply_text("Processing ...")
+    ismgs = await message.reply_text("processing ...")
     if os.path.exists(thumb_image_path):
         os.remove(thumb_image_path)
-    await ismgs.edit("😀Custom thumbnail cleared succesfully😀")
+    await ismgs.edit("✅ Custom thumbnail cleared succesfully.")
